@@ -1,0 +1,4 @@
+.element__like_active {
+    background: url(../../../../images/heart_active.svg) transparent no-repeat;
+    background-size: 20px 18px;
+}
