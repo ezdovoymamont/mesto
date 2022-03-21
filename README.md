@@ -31,3 +31,4 @@
 - [Чеклист 4](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf).
 
 ## Ссылка на сайт:
+- [Сайт] (https://ezdovoymamont.github.io/mesto/)
