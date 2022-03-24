@@ -1,3 +1,4 @@
 .popup_open {
-	display: none;
+	/*display: flex;*/
+	display: flex;
 }

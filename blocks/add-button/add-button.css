@@ -4,8 +4,7 @@
 	height: 50px;
 	border: 2px solid #FFFFFF;
 	border-radius: 2px;
-	box-sizing: border-box;
-	background: none;
+	background: url(../../images/icon-add.svg) no-repeat center;
 	cursor: pointer;
 	grid-area: add-button;
 }
