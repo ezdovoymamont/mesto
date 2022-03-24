@@ -6,12 +6,12 @@ const userName = document.querySelector('.profile__name');
 const userJob = document.querySelector('.profile__job');
 const likeButtons = document.querySelectorAll('.element__like');
 
-const nameInput = document.querySelector('.popup__input_type_name');
-const jobInput = document.querySelector('.popup__input_type_job');
+const nameInput = document.querySelector('.popup__input_name');
+const jobInput = document.querySelector('.popup__input_job');
 
 function openPopup() {
 	popupElement.classList.toggle('popup_open');
-	
+
 	nameInput.value = userName.textContent;
 	jobInput.value = userJob.textContent;
 }
