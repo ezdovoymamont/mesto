@@ -1,6 +1,6 @@
 .profile {
 	display: grid;
-	max-width: 880px;
+	/*max-width: 880px;*/
 	height: 120px;
 	grid-template-areas: 
 	"profile__avatar profile__name edit-profile add-button"

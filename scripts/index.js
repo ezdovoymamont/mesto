@@ -10,14 +10,14 @@ const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 
 function openPopup() {
-	popupElement.classList.toggle('popup_open');
+	popupElement.classList.add('popup_open');
 
 	nameInput.value = userName.textContent;
 	jobInput.value = userJob.textContent;
 }
 
 function closePopup() {
-	popupElement.classList.toggle('popup_open');
+	popupElement.classList.remove('popup_open');
 }
 
 editProfile.addEventListener('click', openPopup)
