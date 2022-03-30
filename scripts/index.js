@@ -14,7 +14,7 @@ const popupProfileLinkInput = popupAddPhoto.querySelector('.popup__input_type_li
 const closeButtonPhoto = popupAddPhoto.querySelector('.popup__close-button');
 const photoForm = popupAddPhoto.querySelector('.popup__form_type_photo');
 
-const popupView = document.querySelector('.popup__view-photo');
+const popupView = document.querySelector('.popup_view-photo');
 const popupButtonView = popupView.querySelector('.popup__close-button');
 const popupViewPhoto = popupView.querySelector('.popup__photo');
 const popupViewDesc = popupView.querySelector('.popup__description');
