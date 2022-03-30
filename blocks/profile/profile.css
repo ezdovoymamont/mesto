@@ -1,13 +1,14 @@
 .profile {
 	display: grid;
-	/*max-width: 880px;*/
 	height: 120px;
 	grid-template-areas: 
 	"profile__avatar profile__name edit-profile add-button"
 	"profile__avatar profile__job edit-profile add-button";
-	grid-template-columns: 150px 312px 1fr 150px;
+	grid-template-columns: 150px 312px 1fr 1fr;
 	grid-template-rows: 72px 1fr;
+	max-width: 880px;
 }
+
 
 
 @media (max-width: 740px) {
