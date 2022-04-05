@@ -20,7 +20,6 @@ const popupViewPhoto = popupView.querySelector('.popup__photo');
 const popupViewDesc = popupView.querySelector('.popup__description');
 
 const elementList = document.querySelector('.elements__list');
-
 const cardTemplate = document.querySelector('#card-template').content;
 
 const initialCards = [
@@ -49,3 +48,4 @@ const initialCards = [
 	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 	}
 ];
+

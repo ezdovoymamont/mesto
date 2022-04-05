@@ -47,21 +47,37 @@
       <div class="popup popup_type_profile">
         <div class="popup__window">
           <button class="popup__close-button" type="button"></button>
-          <form class="popup__form popup__form_type_profile" name="profile-form">
+          <form class="popup__form popup__form_type_profile" name="profile-form" novalidate>
+            <fieldset class="popup__set">
             <h3 class="popup__title">Редактировать профиль</h3>
+            <label class="popup__field">
             <input
               class="popup__input popup__input_type_name"
               type="text"
               name="name"
               placeholder="Введите имя"
+              id="profile-name"
+              minlength="2"
+              maxlength="40"
+              required
             />
+            <span class="popup__input-error profile-name-error"></span>
+            </label>
+            <label class="popup__field">
             <input
               class="popup__input popup__input_type_job"
               type="text"
               name="job"
               placeholder="Введите профессию"
+              id="profile-job"
+              minlength="2"
+              maxlength="200"
+              required
             />
+            <span class="popup__input-error profile-job-error"></span>
+            </label>
             <button type="submit" class="popup__save-button">Сохранить</button>
+            </fieldset>
           </form>
         </div>
       </div>
@@ -70,21 +86,35 @@
         <div class="popup popup_type_photo">
           <div class="popup__window">
             <button class="popup__close-button" type="button"></button>
-            <form class="popup__form popup__form_type_photo" name="add-photo">
+            <form class="popup__form popup__form_type_photo" name="add-photo" novalidate>
+              <fieldset class="popup__set">
               <h3 class="popup__title">Новое место</h3>
+              <label class="popup__field">
               <input
                 class="popup__input popup__input_type_title"
                 type="text"
                 name="title"
                 placeholder="Название"
+                id="photo-title"
+                minlength="2"
+                maxlength="30"
+                required
               />
+              <span class="popup__input-error photo-title-error"></span>
+              </label>
+              <label class="popup__field">
               <input
                 class="popup__input popup__input_type_link"
                 type="url"
                 name="link-image"
                 placeholder="Ссылка на картинку"
+                id="photo-link"
+                required
               />
+              <span class="popup__input-error photo-link-error"></span>
+              </label>
               <button type="submit" class="popup__save-button">Создать</button>
+              </fieldset>
             </form>
           </div>
         </div>
@@ -111,7 +141,8 @@
           </li>
         </template>
     
-      <script src="./scripts/constants.js"></script>
+        <script src="./scripts/constants.js"></script>
+        <script src="./scripts/validate.js"></script>
       <script src="./scripts/index.js"></script>
       
       

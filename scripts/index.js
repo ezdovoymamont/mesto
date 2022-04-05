@@ -31,29 +31,40 @@ function createCard(cardPhoto, cardName) {
 }
 
 // Функция перебора массива с фотокарточками
-
 function renderInitialCards(initialCards) {
 	initialCards.forEach((item) => {
 		elementList.append(createCard(item.link, item.name));
 	})
 }
-
 renderInitialCards(initialCards);
+
+
+
 
 // Открытие popup
 function openPopup(popup) {
 	popup.classList.add('popup_open');
+
+	// добавляем обработчики закрытия по Escape и клику на overlay
+	//document.addEventListener('keydown', handleHotkey);
+	document.addEventListener('click', overlayClick);
 }
 
 // Закрытие popup
 function closePopup(popup) {
 	popup.classList.remove('popup_open');
+
+	// удаляем обработчики закрытия по Escape и клику на overlay
+	//document.removeEventListener('keydown', handleHotkey);
+	document.removeEventListener('click', overlayClick);
 }
 
 // Открытие popup по клику на редактировать профиль или добавить фотокарточку
 editProfile.addEventListener('click', function() {
 	popupProfileNameInput.value = userName.textContent;
 	popupProfileJobInput.value = userJob.textContent;
+	popupProfileNameInput.dispatchEvent(new Event('input', {bubbles:true}));
+	popupProfileJobInput.dispatchEvent(new Event('input', {bubbles:true}));
 
 	openPopup(popupProfile);
 })
@@ -64,6 +75,25 @@ addButton.addEventListener('click', () => openPopup(popupAddPhoto));
 closeButtonProfile.addEventListener('click', () => closePopup(popupProfile));
 closeButtonPhoto.addEventListener('click', () => closePopup(popupAddPhoto));
 popupButtonView.addEventListener('click', () => closePopup(popupView));
+
+// Закрытие popup по Escape
+const popups = Array.from(document.querySelectorAll('.popup'));
+document.addEventListener('keydown',  (evt) => {
+		if (evt.key === "Escape") {
+			popups.forEach(
+				(p) => {closePopup(p);}
+			);
+		}	 
+});
+
+// Закрытие popup по overlay
+function overlayClick(evt) {
+	const activePopup = document.querySelector('.popup_open');
+	
+	if (activePopup && evt.target === activePopup ) {
+	  closePopup(activePopup);
+	}
+}
 
 // Функция формы для изменения профиля
 function handlerРrofileSubmit(evt) {
@@ -86,6 +116,10 @@ function handlerNewCardSubmit(evt) {
 
 	closePopup(popupAddPhoto);
 	photoForm.reset();
+
+	const saveButton = photoForm.querySelector('.popup__save-button');
+	saveButton.classList.add('popup__save-button_disabled');
+
 }
 photoForm.addEventListener('submit', handlerNewCardSubmit);
 
