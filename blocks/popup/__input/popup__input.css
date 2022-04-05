@@ -11,6 +11,7 @@
         margin: 29px auto 0;
         width: 100%;
         outline-color: #42aaff;
+        outline-offset: 1px;
     }
 
     @media (max-width: 580px) {
