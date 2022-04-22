@@ -1,25 +1,25 @@
-const buttonEditProfile = document.querySelector('.edit-profile');
-const userName = document.querySelector('.profile__name');
-const userJob = document.querySelector('.profile__job');
-const popupProfile = document.querySelector('.popup_type_profile')
-const popupProfileNameInput = popupProfile.querySelector('.popup__input_type_name');
-const popupProfileJobInput = popupProfile.querySelector('.popup__input_type_job');
-const profileForm = popupProfile.querySelector('.popup__form_type_profile');
+export const buttonEditProfile = document.querySelector('.edit-profile');
+export const userName = document.querySelector('.profile__name');
+export const userJob = document.querySelector('.profile__job');
+export const popupProfile = document.querySelector('.popup_type_profile')
+export const popupProfileNameInput = popupProfile.querySelector('.popup__input_type_name');
+export const popupProfileJobInput = popupProfile.querySelector('.popup__input_type_job');
+export const profileForm = popupProfile.querySelector('.popup__form_type_profile');
+ 
+export const addButton = document.querySelector('.add-button');
+export const popupAddPhoto = document.querySelector('.popup_type_photo')
+export const popupProfileTitleInput = popupAddPhoto.querySelector('.popup__input_type_title');
+export const popupProfileLinkInput = popupAddPhoto.querySelector('.popup__input_type_link');
+export const photoForm = popupAddPhoto.querySelector('.popup__form_type_photo');
 
-const addButton = document.querySelector('.add-button');
-const popupAddPhoto = document.querySelector('.popup_type_photo')
-const popupProfileTitleInput = popupAddPhoto.querySelector('.popup__input_type_title');
-const popupProfileLinkInput = popupAddPhoto.querySelector('.popup__input_type_link');
-const photoForm = popupAddPhoto.querySelector('.popup__form_type_photo');
+export const popupView = document.querySelector('.popup_view-photo');
+export const popupViewPhoto = popupView.querySelector('.popup__photo');
+export const popupViewDesc = popupView.querySelector('.popup__description');
+ 
+export const elementList = document.querySelector('.elements__list');
+export const cardTemplate = document.querySelector('#card-template').content;
 
-const popupView = document.querySelector('.popup_view-photo');
-const popupViewPhoto = popupView.querySelector('.popup__photo');
-const popupViewDesc = popupView.querySelector('.popup__description');
-
-const elementList = document.querySelector('.elements__list');
-const cardTemplate = document.querySelector('#card-template').content;
-
-const initialCards = [
+export const initialCards = [
 	{
 	  name: 'Архыз',
 	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -46,7 +46,7 @@ const initialCards = [
 	}
 ];
 
-const params = {
+export const params = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     fieldsetSelector:'.popup__set',

@@ -1,3 +1,23 @@
+import {
+	buttonEditProfile, 
+	userName, 
+	userJob, 
+	popupProfileNameInput,
+ 	popupProfileJobInput,
+ 	popupProfile,
+ 	profileForm,
+ 	addButton,
+ 	popupAddPhoto,
+ 	popupProfileTitleInput,
+ 	popupProfileLinkInput,
+ 	photoForm,
+ 	popupView,
+ 	popupViewPhoto,
+ 	popupViewDesc,
+ 	elementList,
+ 	initialCards, 
+	params 
+} from './utils/constants.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
@@ -8,6 +28,13 @@ function openPopup(popup) {
 	// добавляем обработчики закрытия по Escape и клику на overlay
 	document.addEventListener('keydown', handleHotkey);
 	popup.addEventListener('click', handleOverlayClick);
+}
+function handleCardClick(cardPhoto, cardName) {
+	popupViewPhoto.src = cardPhoto;
+	popupViewPhoto.alt = cardName;
+	popupViewDesc.textContent = cardName;
+
+	openPopup(popupView);
 }
 
 // Закрытие popup
@@ -84,13 +111,13 @@ photoForm.addEventListener('submit', handleNewCardSubmit);
 // Функция перебора массива с фотокарточками
 function renderInitialCards(initialCards) {
 	initialCards.forEach((item) => {
-  		const card = new Card(item.link, item.name, '#card-template', openPopup);
+  		const card = new Card(item.link, item.name, '#card-template', handleCardClick);
 		elementList.append(card.createCard());
 	})
 }
 renderInitialCards(initialCards);
 
-//-----
+// Валидация
 function enableValidations() {
 	const formElement = Array.from(document.querySelectorAll(params['formSelector']));
 	formElement.forEach((formElement) => {
@@ -100,5 +127,5 @@ function enableValidations() {
 	
 }
 enableValidations();
-//-----
+
 

@@ -27,11 +27,7 @@ export default class Card {
     }
 
     _openClicked() {
-        popupViewPhoto.src = this._cardPhoto;
-        popupViewPhoto.alt = this._cardName;
-        popupViewDesc.textContent = this._cardName;
-
-        this._openPopup(popupView);
+        this._openPopup( this._cardPhoto,  this._cardName);
     }
 
     createCard() {
