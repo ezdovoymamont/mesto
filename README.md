@@ -1,4 +1,4 @@
-# Проектная работа 4 - 6
+# Проектная работа 4 - 7
 # "Место" [Яндекс.Практикум](https://practicum.yandex.ru/)
 ---
 
@@ -12,6 +12,7 @@
 2. Можно добавлять собственные фотокарточки (написать имя карточки и дать ссылку на картинку).
 3. Можно ставить и убирать лайк под фотокарточкой.
 4. Можно удалить фотокарточку.
+5. Настроена валидация сайта.
 
 ## Стек технологий:
 - HTML5;
@@ -35,6 +36,7 @@
 - [Чеклист 4](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf).
 - [Чеклист 5](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf).
 - [Чеклист 6](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf).
+- [Чеклист 7](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-7.pdf).
 
 ## Ссылка на сайт:
 - [Сайт](https://ezdovoymamont.github.io/mesto/)

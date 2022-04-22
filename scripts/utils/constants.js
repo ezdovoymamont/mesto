@@ -4,18 +4,15 @@ const userJob = document.querySelector('.profile__job');
 const popupProfile = document.querySelector('.popup_type_profile')
 const popupProfileNameInput = popupProfile.querySelector('.popup__input_type_name');
 const popupProfileJobInput = popupProfile.querySelector('.popup__input_type_job');
-//const buttonCloseProfile = popupProfile.querySelector('.popup__close-button');
 const profileForm = popupProfile.querySelector('.popup__form_type_profile');
 
 const addButton = document.querySelector('.add-button');
 const popupAddPhoto = document.querySelector('.popup_type_photo')
 const popupProfileTitleInput = popupAddPhoto.querySelector('.popup__input_type_title');
 const popupProfileLinkInput = popupAddPhoto.querySelector('.popup__input_type_link');
-//const buttonClosePhoto = popupAddPhoto.querySelector('.popup__close-button');
 const photoForm = popupAddPhoto.querySelector('.popup__form_type_photo');
 
 const popupView = document.querySelector('.popup_view-photo');
-//const popupButtonView = popupView.querySelector('.popup__close-button');
 const popupViewPhoto = popupView.querySelector('.popup__photo');
 const popupViewDesc = popupView.querySelector('.popup__description');
 
@@ -48,4 +45,14 @@ const initialCards = [
 	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 	}
 ];
+
+const params = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    fieldsetSelector:'.popup__set',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__save-button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_visible'
+};
 

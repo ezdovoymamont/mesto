@@ -1,42 +1,5 @@
-	// Cоздаем новые фотокарточки 
-function createCard(cardPhoto, cardName) {
-	
-	const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-	const cardElementPhoto = cardElement.querySelector('.element__photo');
-  
-	cardElementPhoto.src = cardPhoto;
-	cardElementPhoto.alt = cardName;
-	cardElement.querySelector('.element__title').textContent = cardName;
-  
-	// Лайк фотокарточки 
-	cardElement.querySelector('.element__like').addEventListener('click', function(evt) {
-		evt.target.classList.toggle('element__like_active');
-	})
-  
-	// Удаление фотокарточки 
-	cardElement.querySelector('.element__trash').addEventListener('click', function(evt) {
-		evt.target.closest('.element').remove();
-	})
-  
-	// Открытие фотокарточки в popup окне
-	cardElement.querySelector('.element__photo').addEventListener('click', function() {
-		popupViewPhoto.src = cardPhoto;
-		popupViewPhoto.alt = cardName;
-	  	popupViewDesc.textContent = cardName;
-		  
-		openPopup(popupView);
-	})
-
-	return cardElement;
-}
-
-// Функция перебора массива с фотокарточками
-function renderInitialCards(initialCards) {
-	initialCards.forEach((item) => {
-		elementList.append(createCard(item.link, item.name));
-	})
-}
-renderInitialCards(initialCards);
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
 
 // Открытие popup
 function openPopup(popup) {
@@ -53,7 +16,7 @@ function closePopup(popup) {
 
 	// удаляем обработчики закрытия по Escape и клику на overlay
 	document.removeEventListener('keydown', handleHotkey); 
-	popup.removeEventListener('click', overlayClick); 
+	popup.removeEventListener('click', handleOverlayClick); 
 
 } 
 
@@ -69,21 +32,6 @@ buttonEditProfile.addEventListener('click', function() {
 
 addButton.addEventListener('click', () => openPopup(popupAddPhoto));
 
-// Закрытие popup по клику
-//buttonCloseProfile.addEventListener('click', () => closePopup(popupProfile));
-//buttonClosePhoto.addEventListener('click', () => closePopup(popupAddPhoto));
-//popupButtonView.addEventListener('click', () => closePopup(popupView));
-
-// Закрытие popup по Escape
-/*const popups = Array.from(document.querySelectorAll('.popup'));
-document.addEventListener('keydown',  (evt) => {
-		if (evt.key === "Escape") {
-			popups.forEach(
-				(p) => {closePopup(p);}
-			);
-		}	 
-});*/
-
 function handleHotkey(evt) {
 	// проверяем есть ли открытый попап и только тогда закрываем
 	const activePopup = document.querySelector('.popup_open');
@@ -91,7 +39,6 @@ function handleHotkey(evt) {
 	  closePopup(activePopup);
 	}
   }
-
 
 // Закрытие popup по overlay и крестику
 function handleOverlayClick(evt) {
@@ -120,7 +67,8 @@ profileForm.addEventListener('submit', handleРrofileSubmit);
 function handleNewCardSubmit(evt) {
 	evt.preventDefault();
 
-	elementList.prepend(createCard(popupProfileLinkInput.value, popupProfileTitleInput.value));
+	const card = new Card(popupProfileLinkInput.value, popupProfileTitleInput.value, '#card-template');
+	elementList.prepend(card.createCard());
 
 	closePopup(popupAddPhoto);
 	photoForm.reset();
@@ -131,4 +79,26 @@ function handleNewCardSubmit(evt) {
 
 }
 photoForm.addEventListener('submit', handleNewCardSubmit);
+
+
+// Функция перебора массива с фотокарточками
+function renderInitialCards(initialCards) {
+	initialCards.forEach((item) => {
+  		const card = new Card(item.link, item.name, '#card-template', openPopup);
+		elementList.append(card.createCard());
+	})
+}
+renderInitialCards(initialCards);
+
+//-----
+function enableValidations() {
+	const formElement = Array.from(document.querySelectorAll(params['formSelector']));
+	formElement.forEach((formElement) => {
+		const formList = new FormValidator(params, formElement);
+		formList.enableValidation();
+	});
+	
+}
+enableValidations();
+//-----
 
