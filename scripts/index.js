@@ -61,20 +61,19 @@ addButton.addEventListener('click', () => openPopup(popupAddPhoto));
 
 function handleHotkey(evt) {
 	// проверяем есть ли открытый попап и только тогда закрываем
-	const activePopup = document.querySelector('.popup_open');
-	if (activePopup && evt.key === 'Escape') { 
-	  closePopup(activePopup);
+	
+	if (evt.key === 'Escape') { 
+		const activePopup = document.querySelector('.popup_open');
+		closePopup(activePopup);
 	}
-  }
+}
 
 // Закрытие popup по overlay и крестику
 function handleOverlayClick(evt) {
-	const activePopup = document.querySelector('.popup_open');
-
-	if ((activePopup && evt.target === activePopup) || evt.target.classList.contains('popup__close-button') ) {
-		console.log();
-		closePopup(activePopup);
-	}
+	
+	if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button') ) { 
+        closePopup(evt.currentTarget); 
+    } 
 }
 
 // Функция формы для изменения профиля
@@ -91,7 +90,7 @@ function handleРrofileSubmit(evt) {
 profileForm.addEventListener('submit', handleРrofileSubmit);
 
 // Функция добавления новой фотокарточки
-function handleNewCardSubmit(evt) {
+function handleNewCardSubmit(evt, validator) {
 	evt.preventDefault();
 
 	const card = new Card(popupProfileLinkInput.value, popupProfileTitleInput.value, '#card-template');
@@ -100,13 +99,8 @@ function handleNewCardSubmit(evt) {
 	closePopup(popupAddPhoto);
 	photoForm.reset();
 
-	const buttonSave = photoForm.querySelector('.popup__save-button');
-	buttonSave.classList.add('popup__save-button_disabled');
-	buttonSave.setAttribute('disabled', true);
-
+	validator.toggleButtonState();
 }
-photoForm.addEventListener('submit', handleNewCardSubmit);
-
 
 // Функция перебора массива с фотокарточками
 function renderInitialCards(initialCards) {
@@ -120,11 +114,13 @@ renderInitialCards(initialCards);
 // Валидация
 function enableValidations() {
 	const formElement = Array.from(document.querySelectorAll(params['formSelector']));
-	formElement.forEach((formElement) => {
-		const formList = new FormValidator(params, formElement);
-		formList.enableValidation();
-	});
-	
+
+	const profileValidation = new FormValidator(params, popupProfile);
+	const newCardValidation = new FormValidator(params, photoForm);
+	profileValidation.enableValidation();
+	newCardValidation.enableValidation();  
+
+	photoForm.addEventListener('submit', (evt) => handleNewCardSubmit(evt, newCardValidation));
 }
 enableValidations();
 

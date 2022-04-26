@@ -45,7 +45,7 @@ export default class Card {
         cardElement.querySelector('.element__trash').addEventListener('click',  this._trashClicked);
       
         // Открытие фотокарточки в popup окне
-        cardElement.querySelector('.element__photo').addEventListener('click', () => this._openClicked());
+        cardElementPhoto.addEventListener('click', () => this._openClicked());
     
         return cardElement;
     } 
