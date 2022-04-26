@@ -1,6 +1,8 @@
 export default class FormValidator {
 
     constructor(params, formElement) {
+        console.log(formElement);
+
         this._params = params;
         this._formElement = formElement;
         this._inputList = Array.from(this._formElement.querySelectorAll(this._params['inputSelector']));
@@ -30,16 +32,9 @@ export default class FormValidator {
         }
     }
       
-    _hasInvalidInput = () => {
-        
-        return this._inputList.some((inputElement) => {
-    
-          return !inputElement.validity.valid;
-        })
-    }
-      
     toggleButtonState = () => {
-        if(this._hasInvalidInput()) {
+
+        if(this._formElement.checkValidity() === false) {
             this._buttonElement.classList.add(this._params['inactiveButtonClass']);
             this._buttonElement.setAttribute('disabled', true);
         }
