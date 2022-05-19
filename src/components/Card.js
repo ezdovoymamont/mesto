@@ -1,21 +1,19 @@
 export default class Card {
     
-    constructor(cardPhoto, cardName, cardTemplate, openPopup) {
+    constructor(cardPhoto, cardName, cardTemplate, handleCardClick) {
         this._cardPhoto = cardPhoto;
 	    this._cardName = cardName;
         this._cardTemplate = cardTemplate;
-        this._openPopup = openPopup;
+        this._handleCardClick= handleCardClick;
 
     }
 
     _getTemplate() {
-        const cardElement = document
-          .querySelector(this._cardTemplate)
-          .content
-          .querySelector('.element')
-          .cloneNode(true);
-    
-        return cardElement;
+        return document
+            .querySelector(this._cardTemplate)
+            .content
+            .querySelector('.element')
+            .cloneNode(true);
     }
 
     _likeClicked() {
@@ -27,7 +25,7 @@ export default class Card {
     }
 
     _openClicked() {
-        this._openPopup( this._cardPhoto,  this._cardName);
+        this._handleCardClick( this._cardPhoto,  this._cardName);
     }
 
     createCard() {

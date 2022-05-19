@@ -1,23 +1,17 @@
 export const buttonEditProfile = document.querySelector('.edit-profile');
-export const userName = document.querySelector('.profile__name');
-export const userJob = document.querySelector('.profile__job');
-export const popupProfile = document.querySelector('.popup_type_profile')
-export const popupProfileNameInput = popupProfile.querySelector('.popup__input_type_name');
-export const popupProfileJobInput = popupProfile.querySelector('.popup__input_type_job');
-export const profileForm = popupProfile.querySelector('.popup__form_type_profile');
+export const userName = '.profile__name';
+export const userJob = '.profile__job';
+export const popupProfile = '.popup_type_profile';
+export const popupProfileNameInput = document.querySelector('.popup__input_type_name');
+export const popupProfileJobInput = document.querySelector('.popup__input_type_job');
+export const profileForm = document.querySelector('.popup__form_type_profile');
  
 export const addButton = document.querySelector('.add-button');
-export const popupAddPhoto = document.querySelector('.popup_type_photo')
-export const popupProfileTitleInput = popupAddPhoto.querySelector('.popup__input_type_title');
-export const popupProfileLinkInput = popupAddPhoto.querySelector('.popup__input_type_link');
-export const photoForm = popupAddPhoto.querySelector('.popup__form_type_photo');
+export const popupAddPhoto = '.popup_type_photo';
+export const photoForm = document.querySelector('.popup__form_type_photo');
 
-export const popupView = document.querySelector('.popup_view-photo');
-export const popupViewPhoto = popupView.querySelector('.popup__photo');
-export const popupViewDesc = popupView.querySelector('.popup__description');
- 
-export const elementList = document.querySelector('.elements__list');
-export const cardTemplate = document.querySelector('#card-template').content;
+export const popupView = '.popup_view-photo';
+export const elementList = '.elements__list';
 
 export const initialCards = [
 	{

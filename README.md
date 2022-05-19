@@ -24,8 +24,9 @@
   - Media Queries;
 - Методология БЭМ;
 - Фйловая структура Nested БЭМ;
-- Вёрстка по макету в FigmaЖ
-- JavaScript.
+- Вёрстка по макету в Figma;
+- JavaScript:
+- Подключен Webpack.
 
 ## Бриф Проектной работы в Figma:
 - [Бриф 4](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A326).
@@ -37,6 +38,7 @@
 - [Чеклист 5](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf).
 - [Чеклист 6](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf).
 - [Чеклист 7](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-7.pdf).
+- [Чеклист 8](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-8.pdf).
 
 ## Ссылка на сайт:
 - [Сайт](https://ezdovoymamont.github.io/mesto/)
