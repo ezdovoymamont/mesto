@@ -39,18 +39,16 @@ function handleCardClick(cardPhoto, cardName) {
 addButton.addEventListener('click', () => popupAddCard.open());
 
 // Функция добавления новой фотокарточки
-function handleNewCardSubmit(evt, cardInfo) {
-	evt.preventDefault();
+function handleNewCardSubmit(cardInfo) {
 	popupAddCard.close();
-	section.addNewItem(createAllCard(cardInfo['link-image'], cardInfo['title']));
+	section.addNewItemStart(createAllCard(cardInfo['link-image'], cardInfo['title']));
 	newCardValidation.toggleButtonState();
 }
 
 const userInfo = new UserInfo({userName, userJob});
 
 // Функция формы для изменения профиля
-function handleProfileSubmit(evt, profileInfo) {
-	evt.preventDefault();
+function handleProfileSubmit(profileInfo) {
 	editProfile.close();
 	userInfo.setUserInfo(profileInfo['name'], profileInfo['job']);
 
@@ -84,16 +82,16 @@ function createAllCard(link, name) {
 	return card.createCard();
 }
 
-const items = [];
-initialCards.forEach((item) => {
-	items.push(createAllCard(item.link, item.name));
-});
+// const items = [];
+// initialCards.forEach((item) => {
+// 	items.push(createAllCard(item.link, item.name));
+// });
 
 const section = new Section(
 	{
-		items: items,
+		items: initialCards,
 		renderer: (item) => {
-			section.addItem(item)
+			section.addNewItemEnd(createAllCard(item.link, item.name))
 		}
 	},
 	elementList);

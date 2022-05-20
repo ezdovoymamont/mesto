@@ -5,7 +5,7 @@ export default class Card {
 	    this._cardName = cardName;
         this._cardTemplate = cardTemplate;
         this._handleCardClick= handleCardClick;
-
+        this._cardElement = this._getTemplate();
     }
 
     _getTemplate() {
@@ -21,7 +21,8 @@ export default class Card {
     }
 
     _trashClicked() {
-        this.closest('.element').remove();
+        this._cardElement.remove();
+        this._cardElement = null;
     }
 
     _openClicked() {
@@ -29,22 +30,21 @@ export default class Card {
     }
 
     createCard() {
-        const cardElement = this._getTemplate();
-        const cardElementPhoto = cardElement.querySelector('.element__photo');
+        const cardElementPhoto = this._cardElement.querySelector('.element__photo');
       
         cardElementPhoto.src = this._cardPhoto;
         cardElementPhoto.alt = this._cardName;
-        cardElement.querySelector('.element__title').textContent = this._cardName;
+        this._cardElement.querySelector('.element__title').textContent = this._cardName;
       
         // Лайк фотокарточки 
-        cardElement.querySelector('.element__like').addEventListener('click', this._likeClicked);
+        this._cardElement.querySelector('.element__like').addEventListener('click', this._likeClicked);
       
         // Удаление фотокарточки 
-        cardElement.querySelector('.element__trash').addEventListener('click',  this._trashClicked);
+        this._cardElement.querySelector('.element__trash').addEventListener('click', () => this._trashClicked());
       
         // Открытие фотокарточки в popup окне
         cardElementPhoto.addEventListener('click', () => this._openClicked());
     
-        return cardElement;
+        return this._cardElement;
     } 
 }
