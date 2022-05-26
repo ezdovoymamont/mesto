@@ -7,7 +7,7 @@ export const popupProfileJobInput = document.querySelector('.popup__input_type_j
 export const profileForm = document.querySelector('.popup__form_type_profile');
 
 export const buttonEditAvatar = document.querySelector('.edit-avatar');
-export const popupAvatar = '.popup__edit-avatar';
+export const popupAvatar = '.popup_edit-avatar';
 export const userAvatar = '.profile__avatar';
 export const avatarForm = document.querySelector('.popup__form_edit-avatar');
  
