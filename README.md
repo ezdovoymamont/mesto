@@ -1,4 +1,4 @@
-# Проектная работа 4 - 7
+# Проектная работа 4 - 9
 # "Место" [Яндекс.Практикум](https://practicum.yandex.ru/)
 ---
 
@@ -13,6 +13,8 @@
 3. Можно ставить и убирать лайк под фотокарточкой.
 4. Можно удалить фотокарточку.
 5. Настроена валидация сайта.
+6. Можно изменить аватар.
+7. Сделаны UX всх форм.
 
 ## Стек технологий:
 - HTML5;
@@ -25,20 +27,21 @@
 - Методология БЭМ;
 - Фйловая структура Nested БЭМ;
 - Вёрстка по макету в Figma;
-- JavaScript:
-- Подключен Webpack.
+- JavaScript;
+- Подключен Webpack;
+- Настроена работа с API.
 
 ## Бриф Проектной работы в Figma:
 - [Бриф 4](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A326).
 - [Бриф 5](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1).
 - [Бриф 6](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=1124%3A73).
-
+- [Бриф 9](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript.-Sprint-9?node-id=109%3A75).
 ## Чеклист Проектной работы:
 - [Чеклист 4](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf).
 - [Чеклист 5](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf).
 - [Чеклист 6](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf).
 - [Чеклист 7](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-7.pdf).
 - [Чеклист 8](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-8.pdf).
-
+- [Чеклист 9](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-9.pdf).
 ## Ссылка на сайт:
 - [Сайт](https://ezdovoymamont.github.io/mesto/)

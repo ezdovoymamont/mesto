@@ -18,16 +18,14 @@
       <main class="content">
 
         <section class="profile page__profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Фото профиля"
-          />
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__job">Исследователь океана</p>
+          <!--Редактировать фото профиля-->
+          <button class="edit-avatar profile__edit-avatar" type="button">
+            <img class="profile__avatar" src="#" alt="Фото профиля"> <!--<%=require('./images/avatar.jpg')%>-->
+          </button>
+          <h1 class="profile__name"></h1> <!--Жак-Ив Кусто-->
+          <p class="profile__job">Исследователь океана</p> <!--Исследователь океана-->
           <!--Редактировать профиль-->
-          <button
-            class="edit-profile profile__edit-profile" type="button"></button> 
+          <button class="edit-profile profile__edit-profile" type="button"></button>
           <!--Добавить фото-->
           <button class="add-button profile__add-button" type="button"></button>
         </section>
@@ -43,7 +41,6 @@
       </footer>
 
       <!--Редактировать профиль-->
-
       <div class="popup popup_type_profile">
         <div class="popup__window">
           <button class="popup__close-button" type="button"></button>
@@ -76,13 +73,13 @@
             />
             <span class="popup__input-error profile-job-error"></span>
             </label>
-            <button type="submit" class="popup__save-button">Сохранить</button>
+            <button type="submit" class="popup__save-button popup__save-button-profile">Сохранить</button>
             </fieldset>
           </form>
         </div>
       </div>
 
-        <!--Добавить фото попап-->
+        <!--Добавить фото -->
         <div class="popup popup_type_photo">
           <div class="popup__window">
             <button class="popup__close-button" type="button"></button>
@@ -113,14 +110,13 @@
               />
               <span class="popup__input-error photo-link-error"></span>
               </label>
-              <button type="submit" class="popup__save-button">Создать</button>
+              <button type="submit" class="popup__save-button popup__save-button-creat">Создать</button>
               </fieldset>
             </form>
           </div>
         </div>
 
         <!--Добавление фотокарточек-->
-        
         <section class="popup popup_view-photo">
           <div class="popup__content">
             <img src="#" alt="Описание" class="popup__photo">
@@ -129,21 +125,56 @@
           </div>
         </section>
 
+      <!--Подтверждение удаления фотокартоки-->
+      <div class="popup popup_delete-photo">
+        <div class="popup__confirmation">
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__title">Вы уверены?</h3>
+          <form class="popup__form popup__form_type_delete" name="delete-photo">
+            <button type="submit" class="popup__save-button popup__save-button-delete">Да</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Редактировать фото профиля-->
+      <div class="popup popup__edit-avatar">
+        <div class="popup__avatar">
+          <button class="popup__close-button" type="button"></button>
+          <form class="popup__form popup__form_edit-avatar" name="edit-avatar" novalidate>
+            <fieldset class="popup__set">
+              <h3 class="popup__title">Обновить аватар</h3>
+              <label class="popup__field">
+                <input
+                        class="popup__input popup__input_type_link"
+                        type="url"
+                        name="link-image"
+                        placeholder="Ссылка на фоторафию"
+                        id="avatar-link"
+                        required
+                />
+                <span class="popup__input-error avatar-link-error"></span>
+              </label>
+              <button type="submit" class="popup__save-button popup__save-button-profilePhoto">Сохранить</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
         <template id="card-template">
           <li class="element">
             <img src="#" alt="Описание" class="element__photo">
+
             <div class="element__text">
               <h2 class="element__title"></h2>
-              <button type="button" class="element__like"></button>
+              <div class="element__like-block">
+                <button type="button" class="element__like"></button>
+                <span class="element__like-count">0</span>
+              </div>
             </div>
             <button type="button" class="element__trash"></button>
-
           </li>
         </template>
 
-      <!--script type="module" src="pages/index.js"></script-->
-      
-      
     </div>
   </body>
 </html>

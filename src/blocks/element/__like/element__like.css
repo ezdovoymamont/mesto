@@ -1,13 +1,34 @@
 .element__like {
-  padding-left: 22px;
-  padding-right: 20px;
+  margin: 0 5px 3px;
+  /*padding-left: 22px;*/
+  /*padding-right: 20px;*/
   width: 22px;
   height: 19px;
   border: none;
   outline: none;
   background: url(../../../images/heart.svg) transparent no-repeat;
-  background-size: 20px 18px;
+  /*background-size: 20px 18px;*/
   cursor: pointer;
+
+
+  /*padding-left: 22px;*/
+  /*padding-right: 20px;*/
+  /*margin-top: 22px;*/
+  /*margin-right: 20px;*/
+  /*margin-bottom: 3px;*/
+  /*width: 22px;*/
+  /*height: 19px;*/
+  /*border: none;*/
+  /*outline: none;*/
+  /*background: url(../../../images/heart.svg) transparent no-repeat;*/
+  /*background-size: 20px 18px;*/
+  /*cursor: pointer;*/
+
+
+  /*background-position: center;*/
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
+
 }
 
 .element__like:hover {
