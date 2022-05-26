@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezdovoymamont/mesto.git"
   },
   "author": "Muhina Ekaterina",
   "license": "ISC",
