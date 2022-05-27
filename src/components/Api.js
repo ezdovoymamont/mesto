@@ -33,7 +33,7 @@ export default class Api {
             .then(this._checkError);
     }
 
-    updateProfile(info) {
+    updateProfile(name, info) {
         return fetch(`${this._baseUrl}/users/me`, {
 
             method: 'PATCH',
@@ -42,14 +42,14 @@ export default class Api {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: info.name,
-                about: info.info,
+                name: name,
+                about: info,
             })
         })
             .then(this._checkError);
     }
 
-    updatePhotoProfile(info) {
+    updatePhotoProfile(avatar) {
         return fetch(`${this._baseUrl}/users/me/avatar `, {
 
             method: 'PATCH',
@@ -58,7 +58,7 @@ export default class Api {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                avatar: info.avatar
+                avatar: avatar
             })
         })
             .then(this._checkError);
